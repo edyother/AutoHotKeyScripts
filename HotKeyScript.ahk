@@ -5,7 +5,7 @@ return
 
 ; second mouse button sends 0,0,0
 XButton2::
-Send, 0,0,0{Space}
+Send, {Ctrl 7}
 return
 
 ; sends the start of a header for abc files
