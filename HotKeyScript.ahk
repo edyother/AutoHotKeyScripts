@@ -1,11 +1,24 @@
-; first mouse button sends a number. I use for moving objects to same elevation
-XButton1::
-Send, {Backspace}211.00027820{Space}
-return
+Pause::ExitApp
+SetKeyDelay, 100
+SetMouseDelay, 50
 
-; second mouse button sends 0,0,0
-XButton2::
-Send, {Ctrl 7}
+;shortcut for typing a common line of text
+^!6::
+Send, Give me a call when you get here so I can let you in. (636)344-0890{Return}{Return}Thanks,{Return}Ed
+Return
+
+
+;shortcut for typing a common line of text
+^!1::
+Send,{Return}Thanks,{Return}Ed
+Return
+
+;remap ctrl+` to ctrl+7 for iso view in solidworks
+^`::^7
+Return
+
+;Logo-z closes a program
+#z::!F4
 return
 
 ; sends the start of a header for abc files
@@ -15,32 +28,23 @@ return
 
 ;regular datestamp prefix
 ^d::
-Send, %A_YYYY%-%A_MM%-%A_DD%-%A_Hour%%A_Min%_
+Send, %A_YYYY%-%A_MM%-%A_DD%_
 Return
 
-;remap f1 key to esc
-F1::ESC
-return
-
-; ;remap volume keys
-; Volume_Up::'
-; return
-; 
-; Volume_Down::"
-; return
-; 
-; Volume_Mute::!F4
-; return
-; 
-; ; opens file explorer at the server
-; ^!g::
-; Run explorer.exe "G:\"
-; return
-; 
 ; ;Lisp Template
 ; !^'::
 ; send,(defun c:(){Return}(command ){Return}(princ){Return})
 ; return
+
+ ; opens file explorer at Project Folders
+ ^!p::
+ Run explorer.exe Z:\data\Projects
+ return
+
+ ; opens file explorer at MMRL
+ ^!m::
+ Run explorer.exe "C:\Users\eyother\OneDrive - purdue.edu\MMRL"
+ return
 
 ; sends long date 
 ^!d::
@@ -48,7 +52,6 @@ Send, %A_dddd%, %A_MMMM% %A_dd%, %A_yyyy%
 return
 
 ; sends long time for changelog
-^#t::
-Send, **%A_Hour%:%A_Min%**
+^#t:: Send, **%A_Hour%:%A_Min%** 
 return
 
