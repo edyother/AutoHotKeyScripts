@@ -41,15 +41,20 @@ Return
  Run explorer.exe Z:\data\Projects
  return
 
+ ; opens file explorer at Downloads Folder
+ ^!d::
+ Run explorer.exe C:\Users\eyother\Downloads
+ return
+
  ; opens file explorer at MMRL
  ^!m::
  Run explorer.exe "C:\Users\eyother\OneDrive - purdue.edu\MMRL"
  return
 
-; sends long date 
-^!d::
-Send, %A_dddd%, %A_MMMM% %A_dd%, %A_yyyy%
-return
+;; sends long date 
+;^!d::
+;Send, %A_dddd%, %A_MMMM% %A_dd%, %A_yyyy%
+;return
 
 ; sends long time for changelog
 ^#t:: Send, **%A_Hour%:%A_Min%** 
